@@ -2,9 +2,9 @@ from typing import List, Dict, Any
 from sqlalchemy.orm import Session
 from rapidfuzz import fuzz
 import re
-from .models import Faq
-from .repository import FaqRepository
-from .db import fts_manager
+from models import Faq
+from repository import FaqRepository
+from db import fts_manager
 
 
 class FuzzyRanker:

@@ -2,8 +2,8 @@ from typing import Iterable, List, Optional
 from sqlalchemy.orm import Session
 from pathlib import Path
 import json
-from .models import Faq
-from .db import fts_manager
+from models import Faq
+from db import fts_manager
 
 
 class FaqRepository:

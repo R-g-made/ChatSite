@@ -2,10 +2,10 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from pathlib import Path
-from .db import get_db, init_db, fts_manager
-from .schemas import ChatRequest, ChatResponse, ChatItem, FaqRead
-from .search import SearchService
-from .repository import FaqRepository, Seeder
+from db import get_db, init_db, fts_manager
+from schemas import ChatRequest, ChatResponse, ChatItem, FaqRead
+from search import SearchService
+from repository import FaqRepository, Seeder
 
 app = FastAPI(title="FAQ Chat")
 
