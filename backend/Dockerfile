@@ -2,9 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Копируем зависимости
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Копируем всё содержимое папки backend в корень /app
+COPY backend/ .
 
-CMD ["uvicorn", "backend.app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Запускаем приложение (теперь оно в корне /app, поэтому просто app:app)
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
