@@ -105,7 +105,7 @@ def get_db():
 
 
 def init_db():
-    from . import models
+    import models
 
     Base.metadata.create_all(bind=engine)
     fts_manager.setup()
