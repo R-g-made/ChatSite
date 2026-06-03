@@ -48,8 +48,10 @@ class Seeder:
             return
         if not path.exists():
             return
-        data = []
-        with path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, list):
-            self.repo.bulk_insert(data)
+        try:
+            with path.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, list):
+                self.repo.bulk_insert(data)
+        except Exception as e:
+            print(f"Seeding error: {e}")
