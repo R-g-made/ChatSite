@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Text, String, DateTime
 from sqlalchemy.orm import Mapped
 from datetime import datetime
-from .db import Base
+from db import Base
 
 
 class Faq(Base):
